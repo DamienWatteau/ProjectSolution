@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFService.models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFService.models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50825/FileService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+  <xs:complexType name="InitialFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TokenApp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenUser" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="TxtFile" nillable="true" type="q1:StreamReader" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InitialFile" nillable="true" type="tns:InitialFile" />
+</xs:schema>
