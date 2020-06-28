@@ -48,7 +48,7 @@ namespace ClientNet
             InitialFile file = new InitialFile();
             file.TokenApp = models.ClientProperties.getInstance().TokenInfo.TokenApp;
             file.TokenUser = models.ClientProperties.getInstance().TokenInfo.TokenUser;
-            file.TxtFile = File.OpenRead(openFileDlg.FileName);
+            file.TxtFile = openFileDlg.FileName;
 
             new ServiceReferenceFile.FileServiceClient().SendFile(file);
         }

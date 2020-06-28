@@ -15,8 +15,13 @@ namespace WCFService
     {
         public void SendFile(InitialFile initialFile)
         {
-            System.Diagnostics.Debug.WriteLine(initialFile.TxtFile.Name);
-           
+            System.Diagnostics.Debug.WriteLine(initialFile.TxtFile);
+        }
+
+        private void SendEmailToUser()
+        {
+            //TO FIX : change mail by user mail
+            Email.SendEmail("damien.watteau@viacesi.fr");
         }
     }
 }
