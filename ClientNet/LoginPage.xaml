@@ -7,16 +7,18 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginPage">
-    <Border Background="#2e3137" CornerRadius="20" Margin="20">
-        <StackPanel Margin="20">
+    <Border Background="#2e3137">
+        <StackPanel  HorizontalAlignment="Center" Margin="20">
             <Label Content="Login" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
             <Separator></Separator>
-            <Label Content="Username" Foreground="White" />
-            <TextBox Name="username" Background="#545d6a" Foreground="White" FontSize="18" />
-            <Label Content="Password" Foreground="White" />
-            <PasswordBox Name="password" Background="#545d6a" Foreground="White" FontSize="18" />
-            <Button Name="submit" Content="Submit" Margin="60 10" Background="#545d6a" Foreground="White" Click="btnSubmitClick" />
-            <Label Name ="error" Content="" Foreground="White" />
+            <StackPanel HorizontalAlignment="Center" Margin="30">
+                <Label Content="Username" Foreground="White" HorizontalAlignment="Center" />
+                <TextBox Name="username" Background="#545d6a" Foreground="White" FontSize="18" Width="400"/>
+                <Label Content="Password" Foreground="White" HorizontalAlignment="Center"/>
+                <PasswordBox Name="password" Background="#545d6a" Foreground="White" FontSize="18" />
+                <Label Name ="error" Content="" Foreground="White" />
+            </StackPanel>
+            <Button x:Name="submit" Content="Submit" Margin="60 20" Background="#545d6a" Foreground="White" Click="btnSubmitClick" Width="60" />
         </StackPanel>
     </Border>
 </Page>

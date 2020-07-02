@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WCFService.Controllers;
 using WCFService.models;
 namespace WCFService
 {
@@ -14,21 +15,10 @@ namespace WCFService
     {
         public void SendFile(InitialFile initialFile)
         {
-            FileDecrypt fileDecrypt = new FileDecrypt();
-            fileDecrypt.FilePath = initialFile.FilePath;
-            fileDecrypt.Key = "ABCD";
-            fileDecrypt.FileContentDecrypted= "abaisser abandon";
-            // Envoie à JAX-WS
-            String [] myArray = new String[] { fileDecrypt.FilePath, fileDecrypt.Key, fileDecrypt.FileContentDecrypted };
-            String service = new ServiceReferenceJava.DecipherClient().SendFile(myArray);
-            System.Diagnostics.Debug.WriteLine(service);
-        }
-
-       
-        private void SendEmailToUser()
-        {
-            //TO FIX : change mail by user mail
-            Email.SendEmail("damien.watteau@viacesi.fr");
+            // Génération de la clé
+            KeyGenerator.KeyGen(initialFile.FilePath);
+            String pdfPath = PdfFileCreator.PdfCreator();
+            Email.SendEmail(initialFile.Login, pdfPath);
         }
     }
 }

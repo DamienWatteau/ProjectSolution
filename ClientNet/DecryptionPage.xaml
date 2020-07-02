@@ -8,16 +8,18 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ChooseFilePage">
 
-    <Border Background="#2e3137" CornerRadius="20" Margin="20">
-        <StackPanel Margin="20">
+    <Border Background="#2e3137">
+        <StackPanel  HorizontalAlignment="Center" Margin="20">
             <Label Content="Decryption" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
             <Separator></Separator>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30">
                 <Label Content="File :" Foreground="White" />
-                <TextBox x:Name="FileNameTextBox" Background="#545d6a" Foreground="White" FontSize="18" Width="360" />
-                <Button x:Name="BrowseButton" Content="Browse a file" Background="#545d6a" Foreground="White" Height="32" Click="BrowseButton_Click" />
+                <ComboBox x:Name="FileNameComboBox" Background="#545d6a" Foreground="Black" FontSize="12" Width="600" />
             </StackPanel>
-            <Button Name="submit" Content="Submit" Margin="60 10" Background="#545d6a" Foreground="White" Click="Submit_Click" />
+            <Button x:Name="submit" Content="Submit" Margin="60 20" Background="#545d6a" Foreground="White" Click="Submit_Click" Width="60"/>
+            <Label Content="Vous pouvez lancer deux déchiffrage en même temps maximum." Visibility="Hidden" HorizontalAlignment="Center" FontSize="18" Foreground="White"/>
+            <Label Name="thread1"  Visibility="Hidden" Foreground="White"/>
+            <Label Name="thread2"  Visibility="Hidden" Foreground="White"/>
         </StackPanel>
     </Border>
 </Page>

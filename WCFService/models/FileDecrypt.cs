@@ -6,14 +6,15 @@ using System.Web;
 
 namespace WCFService.models
 {
-    [DataContract]
     public class FileDecrypt
     {
-        [DataMember]
         public string FilePath { get; set; }
-        [DataMember]
+
         public string Key { get; set; }
-        [DataMember]
-        public string FileContentDecrypted { get; set; }
+
+        public int Fiability { get; set; }
+
+        public string TxtFile { get; set; }
+
     }
 }

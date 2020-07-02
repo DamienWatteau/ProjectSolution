@@ -29,23 +29,23 @@ namespace WCFService.models
         public string Subject { get => subject; set => subject = value; }
         public string Body { get => body; set => body = value; }
 
-        public static void SendEmail(string userMail)
+        public static void SendEmail(string userMail, string pdfpath)
         {
             Email email = new Email();
             email.toAddress = userMail;
             var smtp = SmtpSettings(email);
-            MailMessage mailInfo = MailInfo(email);
+            MailMessage mailInfo = MailInfo(email, pdfpath);
             smtp.Send(mailInfo);
         }
 
-        private static MailMessage MailInfo(Email email)
+        private static MailMessage MailInfo(Email email, string pdfPath)
         {
             MailMessage msg = new MailMessage();
             MailAddress ma = new MailAddress(email.FromAddress);
             msg.To.Add(email.ToAddress);
             msg.From = ma; msg.Subject = email.Subject;
             msg.Body = email.Body;
-            //msg.Attachments.Add(new Attachment(@"C:\Users\admin\Documents\AlexXor.txt"));
+            msg.Attachments.Add(new Attachment(pdfPath));
             return msg;
         }
 

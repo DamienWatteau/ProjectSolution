@@ -15,9 +15,9 @@ namespace WCFService.models
         [DataMember]
         public string TokenApp { get; set; }
         [DataMember]
-        public string FileName { get; set; }
-        [DataMember]
         public string FilePath { get; set; }
+        [DataMember]
+        public string Login { get; set; }
 
     }
 }
