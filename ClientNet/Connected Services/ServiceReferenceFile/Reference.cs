@@ -9,128 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace ClientNet.ServiceReferenceFile {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CodePageDataItem", Namespace="http://schemas.datacontract.org/2004/07/System.Globalization")]
-    [System.SerializableAttribute()]
-    public partial class CodePageDataItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private string m_bodyNameField;
-        
-        private int m_dataIndexField;
-        
-        private uint m_flagsField;
-        
-        private string m_headerNameField;
-        
-        private int m_uiFamilyCodePageField;
-        
-        private string m_webNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string m_bodyName {
-            get {
-                return this.m_bodyNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.m_bodyNameField, value) != true)) {
-                    this.m_bodyNameField = value;
-                    this.RaisePropertyChanged("m_bodyName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int m_dataIndex {
-            get {
-                return this.m_dataIndexField;
-            }
-            set {
-                if ((this.m_dataIndexField.Equals(value) != true)) {
-                    this.m_dataIndexField = value;
-                    this.RaisePropertyChanged("m_dataIndex");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public uint m_flags {
-            get {
-                return this.m_flagsField;
-            }
-            set {
-                if ((this.m_flagsField.Equals(value) != true)) {
-                    this.m_flagsField = value;
-                    this.RaisePropertyChanged("m_flags");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string m_headerName {
-            get {
-                return this.m_headerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.m_headerNameField, value) != true)) {
-                    this.m_headerNameField = value;
-                    this.RaisePropertyChanged("m_headerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int m_uiFamilyCodePage {
-            get {
-                return this.m_uiFamilyCodePageField;
-            }
-            set {
-                if ((this.m_uiFamilyCodePageField.Equals(value) != true)) {
-                    this.m_uiFamilyCodePageField = value;
-                    this.RaisePropertyChanged("m_uiFamilyCodePage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string m_webName {
-            get {
-                return this.m_webNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.m_webNameField, value) != true)) {
-                    this.m_webNameField = value;
-                    this.RaisePropertyChanged("m_webName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceFile.IFileService")]
@@ -141,6 +20,12 @@ namespace ClientNet.ServiceReferenceFile {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFileService/SendFile", ReplyAction="http://tempuri.org/IFileService/SendFileResponse")]
         System.Threading.Tasks.Task SendFileAsync(WCFService.models.InitialFile initialFile);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFileService/Test", ReplyAction="http://tempuri.org/IFileService/TestResponse")]
+        void Test(WCFService.models.ReceiveFile name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFileService/Test", ReplyAction="http://tempuri.org/IFileService/TestResponse")]
+        System.Threading.Tasks.Task TestAsync(WCFService.models.ReceiveFile name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -176,6 +61,14 @@ namespace ClientNet.ServiceReferenceFile {
         
         public System.Threading.Tasks.Task SendFileAsync(WCFService.models.InitialFile initialFile) {
             return base.Channel.SendFileAsync(initialFile);
+        }
+        
+        public void Test(WCFService.models.ReceiveFile name) {
+            base.Channel.Test(name);
+        }
+        
+        public System.Threading.Tasks.Task TestAsync(WCFService.models.ReceiveFile name) {
+            return base.Channel.TestAsync(name);
         }
     }
 }

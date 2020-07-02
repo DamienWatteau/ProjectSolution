@@ -4,15 +4,14 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TokenApp" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TokenUser" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Client" nillable="true" type="tns:Client" />
   <xs:complexType name="ClientResult">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
       <xs:element minOccurs="0" name="TokenUser" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="status" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ClientResult" nillable="true" type="tns:ClientResult" />

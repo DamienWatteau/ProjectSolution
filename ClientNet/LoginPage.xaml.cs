@@ -33,6 +33,7 @@ namespace ClientNet
 
         private void checkLogin()
         {
+            // Initialise la classe qui va être sérialisé
             Client client = new Client();
             client.TokenApp = models.ClientProperties.getInstance().TokenInfo.TokenApp;
             client.Username = username.Text;

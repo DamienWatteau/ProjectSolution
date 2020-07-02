@@ -23,7 +23,7 @@ namespace ClientNet.models
 
         public static ClientProperties getInstance()
         {
-            if (tokenInfo == null)
+            if (clientProperties == null)
             {
                 clientProperties = new ClientProperties();
             }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://endpoint.service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="DecipherService" targetNamespace="http://endpoint.service/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://desktop-q3kq7a8:8080/WebS/DecipherService?xsd=1" namespace="http://endpoint.service/" />
+    </xsd:schema>
+  </types>
+  <message name="SendFile">
+    <part name="parameters" element="tns:SendFile" />
+  </message>
+  <message name="SendFileResponse">
+    <part name="parameters" element="tns:SendFileResponse" />
+  </message>
+  <portType name="Decipher">
+    <operation name="SendFile">
+      <input wsam:Action="http://endpoint.service/Decipher/SendFileRequest" message="tns:SendFile" />
+      <output wsam:Action="http://endpoint.service/Decipher/SendFileResponse" message="tns:SendFileResponse" />
+    </operation>
+  </portType>
+  <binding name="DecipherPortBinding" type="tns:Decipher">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="SendFile">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="DecipherService">
+    <port name="DecipherPort" binding="tns:DecipherPortBinding">
+      <soap:address location="http://desktop-q3kq7a8:8080/WebS/DecipherService" />
+    </port>
+  </service>
+</definitions>

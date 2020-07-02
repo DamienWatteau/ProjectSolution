@@ -85,6 +85,12 @@
       <DependentUpon>ClientDataModel.edmx</DependentUpon>
       <LastGenOutput>ClientDataModel.cs</LastGenOutput>
     </Content>
+    <None Include="Connected Services\ServiceReferenceJava\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceJava\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceJava\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="LoginService.svc" />
     <Content Include="FileService.svc" />
     <Content Include="Web.config" />
@@ -108,6 +114,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClientDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ServiceReferenceJava\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="IFileService.cs" />
     <Compile Include="LoginService.svc.cs">
       <DependentUpon>LoginService.svc</DependentUpon>
@@ -117,6 +128,7 @@
     <Compile Include="models\ClientResult.cs" />
     <Compile Include="models\Decryption.cs" />
     <Compile Include="models\Email.cs" />
+    <Compile Include="models\FileDecrypt.cs" />
     <Compile Include="models\InitialFile.cs" />
     <Compile Include="models\FileResult.cs" />
     <Compile Include="models\KeyGenerator.cs" />
@@ -136,6 +148,13 @@
     <Content Include="ClientDataModel.edmx.diagram">
       <DependentUpon>ClientDataModel.edmx</DependentUpon>
     </Content>
+    <None Include="Connected Services\ServiceReferenceJava\DecipherService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceJava\DecipherService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ServiceReferenceJava\WCFService.ServiceReferenceJava.SendFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -146,6 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceJava\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
