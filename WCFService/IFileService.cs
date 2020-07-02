@@ -17,9 +17,5 @@ namespace WCFService
     {
         [OperationContract]
         void SendFile(InitialFile initialFile);
-
-        [OperationContract]
-        [WebGet]
-        void ReceiveFile(FileResult name);
     }
 }

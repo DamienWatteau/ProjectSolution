@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c2051bef-3309-44d2-a8eb-53f3bb6e457a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e3095757-37b1-466c-b848-6be5135d61f0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://desktop-q3kq7a8:8080/WebS/DecipherService?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DecipherService.wsdl" MetadataType="Wsdl" ID="47c37028-e8f3-494f-ba37-35a13ef89c8f" SourceId="1" SourceUrl="http://desktop-q3kq7a8:8080/WebS/DecipherService?WSDL" />
-    <MetadataFile FileName="DecipherService.xsd" MetadataType="Schema" ID="1b83e076-475e-4acc-8b64-8ff0caa97a88" SourceId="1" SourceUrl="http://desktop-q3kq7a8:8080/WebS/DecipherService?xsd=1" />
+    <MetadataFile FileName="DecipherService.wsdl" MetadataType="Wsdl" ID="b8d317d2-2eda-4f11-9785-4022d1afeec6" SourceId="1" SourceUrl="http://desktop-q3kq7a8:8080/WebS/DecipherService?WSDL" />
+    <MetadataFile FileName="DecipherService.xsd" MetadataType="Schema" ID="b1ccbe9f-fe6c-4da5-af33-70a77ed11b0a" SourceId="1" SourceUrl="http://desktop-q3kq7a8:8080/WebS/DecipherService?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

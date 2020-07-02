@@ -21,11 +21,11 @@ namespace ClientNet.ServiceReferenceFile {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFileService/SendFile", ReplyAction="http://tempuri.org/IFileService/SendFileResponse")]
         System.Threading.Tasks.Task SendFileAsync(WCFService.models.InitialFile initialFile);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFileService/Test", ReplyAction="http://tempuri.org/IFileService/TestResponse")]
-        void Test(WCFService.models.ReceiveFile name);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFileService/ReceiveFile", ReplyAction="http://tempuri.org/IFileService/ReceiveFileResponse")]
+        string ReceiveFile();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFileService/Test", ReplyAction="http://tempuri.org/IFileService/TestResponse")]
-        System.Threading.Tasks.Task TestAsync(WCFService.models.ReceiveFile name);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFileService/ReceiveFile", ReplyAction="http://tempuri.org/IFileService/ReceiveFileResponse")]
+        System.Threading.Tasks.Task<string> ReceiveFileAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -63,12 +63,12 @@ namespace ClientNet.ServiceReferenceFile {
             return base.Channel.SendFileAsync(initialFile);
         }
         
-        public void Test(WCFService.models.ReceiveFile name) {
-            base.Channel.Test(name);
+        public string ReceiveFile() {
+            return base.Channel.ReceiveFile();
         }
         
-        public System.Threading.Tasks.Task TestAsync(WCFService.models.ReceiveFile name) {
-            return base.Channel.TestAsync(name);
+        public System.Threading.Tasks.Task<string> ReceiveFileAsync() {
+            return base.Channel.ReceiveFileAsync();
         }
     }
 }

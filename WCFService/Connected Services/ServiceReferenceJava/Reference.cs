@@ -51,12 +51,12 @@ namespace WCFService.ServiceReferenceJava {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoint.service/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
+        public string @return;
         
         public SendFileResponse() {
         }
         
-        public SendFileResponse(bool @return) {
+        public SendFileResponse(string @return) {
             this.@return = @return;
         }
     }
@@ -93,7 +93,7 @@ namespace WCFService.ServiceReferenceJava {
             return base.Channel.SendFile(request);
         }
         
-        public bool SendFile(string[] arg0) {
+        public string SendFile(string[] arg0) {
             WCFService.ServiceReferenceJava.SendFileRequest inValue = new WCFService.ServiceReferenceJava.SendFileRequest();
             inValue.arg0 = arg0;
             WCFService.ServiceReferenceJava.SendFileResponse retVal = ((WCFService.ServiceReferenceJava.Decipher)(this)).SendFile(inValue);
