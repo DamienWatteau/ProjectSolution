@@ -20,8 +20,9 @@ namespace WCFService.models
             int val3 = 1;
             string LastLetter = "Z";
             FileDecrypt fileDecrypt;
+            int possibility = 2; //17576
 
-            while (z < 17576)
+            while (z < possibility)
             {
                 if (Keyarray[1] == LastLetter && Keyarray[2] == LastLetter && Keyarray[3] == LastLetter)
                 {
@@ -58,6 +59,7 @@ namespace WCFService.models
                     String[] array = ConvertToArray(fileDecrypt.FilePath, fileDecrypt.Key, fileDecrypt.TxtFile);
 
                     String tauxDeConfiance = new ServiceReferenceJava.DecipherClient().SendFile(array);
+
                     fileDecrypt.Fiability = Int16.Parse(tauxDeConfiance);
 
                     int bestFiability = FileResult.getIntance().Fiability;

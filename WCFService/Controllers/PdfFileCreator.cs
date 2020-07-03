@@ -42,7 +42,7 @@ namespace WCFService.Controllers
             page.Elements.Add(decryptlabel);
 
 
-            for (int i = 0; i < fileResult.TxtFile.Length; i = i + 3500)
+            /*for (int i = 0; i < fileResult.TxtFile.Length; i = i + 3500)
             {
                 int splitValue = 3500;
                 if (i + 3500 > fileResult.TxtFile.Length)
@@ -56,9 +56,9 @@ namespace WCFService.Controllers
 
                 Label textlabel = new Label(textToPrint, 0, 0, 504, 1000, Font.Helvetica, 12, TextAlign.Left);
                 page1.Elements.Add(textlabel);
-            }
+            }*/
 
-            string pdfPath = $"C:\\Users\\Damien\\Desktop\\Oracle\\rapport\\Rapport_{ExtractFileName(fileResult.TxtFile)}.pdf";
+            string pdfPath = $"C:\\Users\\Damien\\Desktop\\Oracle\\rapport\\Rapport.pdf";
 
             document.Draw(pdfPath);
             return pdfPath;
